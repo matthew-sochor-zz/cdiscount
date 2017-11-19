@@ -27,3 +27,7 @@ pullCategoryData:
 
 sortData: category_names.csv train.bson
 	python organize.py category_names.csv $(data) train.bson
+	@echo
+	@echo Ready to go, start with transfer by running:
+	@echo
+	@echo transfer --configure
