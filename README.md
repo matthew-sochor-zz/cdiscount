@@ -5,6 +5,8 @@ This is largely meant to be a proof of concept for [transfer](https://github.com
 
 ## Lets run this
 
+Start by editing the top of the Makefile with your kaggle username and password
+
 ### Download dependencies
 
 (assumes you have python 3 installed):
@@ -20,6 +22,10 @@ if you are on unix:
 ### Download data
 
 `make pullTrainData`
+
+and
+
+`make pullCategoryData`
 
 and
 
