@@ -3,10 +3,24 @@ Code to run cdiscount kaggle competition
 
 This is largely meant to be a proof of concept for [transfer](https://github.com/matthew-sochor/transfer) a transfer learning python package.
 
-## Lets run this 
+## Lets run this
 
-Download dependencies (assumes you have python 3 installed):
+### Download dependencies
 
-`make dependencies`
+(assumes you have python 3 installed):
 
-Download data
+if you are on mac:
+
+`make macDependencies`
+
+if you are on unix:
+
+`make unixDependencies`
+
+### Download data
+
+`make pullTrainData`
+
+and
+
+`make pullTestData`

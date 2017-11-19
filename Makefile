@@ -1,6 +1,12 @@
-dependencies:
+unixDependencies:
 	pip install transfer
-	pip install pymong
+	pip install pymongo
+	sudo apt-get install p7zip
+
+macDependencies:
+	pip install transfer
+	pip install pymongo
+	sudo apt-get install p7zip
 
 pullTrainData:
 	wget https://www.kaggle.com/c/cdiscount-image-classification-challenge/download/train.bson
