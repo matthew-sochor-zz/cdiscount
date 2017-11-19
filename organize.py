@@ -7,6 +7,7 @@ import bson
 from tqdm import tqdm
 import cv2
 import pandas as pd
+from skimage.data import imread
 
 
 def make_category_dirs(filename):
@@ -21,9 +22,8 @@ def read_images(data_dir, bson_file):
         img = imread(BytesIO(pic['imgs'][0]['picture']))
 
         cv2.imwrite(os.path.join(data_dir, str(pic['category_id']), str(pic['_id']) + '.png'), img)
-        
+
 
 if __name__ == '__main__':
     make_category_dirs(sys.argv[1])
     read_images(sys.argv[2], sys.argv[3])
-
