@@ -1,33 +1,12 @@
-kaggle_user = matthewsochor
-kaggle_password = 12345
-data = data
+kaggle_user ?= matthewsochor
+kaggle_password ?= 12345
+challenge ?= plant-seedlings-classification
+file ?= train.zip
 
-
-unixDependencies:
+dependencies:
 	pip install transfer
-	pip install pymongo
 	pip install kaggle-cli
-	sudo apt-get install p7zip
 
-macDependencies:
-	pip install transfer
-	pip install pymongo
-	pip install kaggle-cli
-	sudo apt-get install p7zip
+pullData:
+	kg download -c $(challenge) -u $(kaggle_user) -p $(kaggle_password) -f $(file)
 
-pullTrainData:
-	kg download -c cdiscount-image-classification-challenge -u $(kaggle_user) -p $(kaggle_password) -f train.bson
-
-pullTestData:
-	kg download -c cdiscount-image-classification-challenge -u $(kaggle_user) -p $(kaggle_password) -f test.bson
-
-pullCategoryData:
-	kg download -c cdiscount-image-classification-challenge -u $(kaggle_user) -p $(kaggle_password) -f category_names.7z
-	7zr x category_names.7z
-
-sortData: category_names.csv train.bson
-	python organize.py category_names.csv $(data) train.bson
-	@echo
-	@echo Ready to go, start with transfer by running:
-	@echo
-	@echo transfer --configure

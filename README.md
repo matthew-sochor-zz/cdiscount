@@ -1,32 +1,23 @@
-# cdiscount
-Code to run cdiscount kaggle competition
+# Kaggle + transfer
 
-This is largely meant to be a proof of concept for [transfer](https://github.com/matthew-sochor/transfer) a transfer learning python package.
+Code to install transfer and pull data for a kaggle competition
 
-## Lets run this
+## Install
 
-Start by editing the top of the Makefile with your kaggle username and password
+This will install kaggle cli and transfer
 
-### Download dependencies
+`make dependencies`
 
-(assumes you have python 3 installed):
+(Note: you need to install tensorflow yourself, your mother doesn't live here)
 
-if you are on mac:
+## Pull data
 
-`make macDependencies`
+Edit the makefile with your kaggle username and password.  Feel free to edit the competition for the one you want to try and even the data name.
 
-if you are on unix:
+To just run with the values in the Makefile:
 
-`make unixDependencies`
+`make pullData`
 
-### Download data
+to override some variables
 
-`make pullTrainData`
-
-and
-
-`make pullCategoryData`
-
-and
-
-`make pullTestData`
+`make pullData file=test.zip`
